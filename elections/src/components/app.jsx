@@ -5,26 +5,16 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state ={"candidates": {}};
-    this.callbackFunc = this.callbackFunc.bind(this);
+
   }
   componentWillMount(){
+    this.props.getAll();
   }
 
-    // var txtFile = '../public/itpas2.txt';
-    // var file = new File(txtFile);
-    // file.open("r");
-    // while (!file.eof) {
-    //     alert(file.readln());
-    // }
-    // file.close();
 
-  callbackFunc(candidates) {
-
-      this.setState({candidates})
-      // do something with the response
-  }
   render(){
-    return <Histogram candidates={this.state.candidates}/>
+    console.log("app",this.props);
+    return <Histogram candidates={this.props.candidates}/>
     }
 }
 
