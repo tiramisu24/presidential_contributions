@@ -1,24 +1,15 @@
 import React from 'react';
-import $ from 'jquery';
+import Histogram from './histogram';
 
 class App extends React.Component{
   constructor(props){
     super(props);
-    this.state ={};
+    this.state ={"candidates": {}};
+    this.callbackFunc = this.callbackFunc.bind(this);
   }
   componentWillMount(){
-    this.readData();
   }
-  readData(){
 
-      // console.log("works");
-      $.ajax({
-          type: "GET",
-          url: "http://localhost:9000/read",
-          success: this.callbackFunc
-      });
-
-  }
     // var txtFile = '../public/itpas2.txt';
     // var file = new File(txtFile);
     // file.open("r");
@@ -27,18 +18,14 @@ class App extends React.Component{
     // }
     // file.close();
 
-  callbackFunc(response) {
-    
-      console.log( response);
+  callbackFunc(candidates) {
+
+      this.setState({candidates})
       // do something with the response
-      // console.log(response);
   }
   render(){
-    return <div>
-
-      Test
-    </div>
-  }
+    return <Histogram candidates={this.state.candidates}/>
+    }
 }
 
 export default App;
