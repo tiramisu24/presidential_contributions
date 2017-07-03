@@ -4,7 +4,7 @@ import json
 class ReadDataAPI(web.RequestHandler):
     @gen.coroutine
     def get(self):
-        self.write({"results" :getResults()})
+        self.write(dummy())
 ROUTES = [
     (r"/read", ReadDataAPI)
 ]
@@ -18,11 +18,11 @@ def getResults():
 
 def dummy():
     res = {
-        "Trump" : {"total" : 15, "contributions:" [{"committee_id": 1, "amt": 1},{"committee_id": 2, "amt": 14}]},
-        "Hillary" : {"total" : 10, "contributions:"  [{"committee_id": 2, "amt": 1},{"committee_id": 3, "amt": 9}]},
-        "Bernie" : {"total" : 5, "contributions:" [ {"committee_id": 5, "amt": 3},{"committee_id": 6, "amt": 2}]},
-
+        "Trump":{"total": 15, "contributions": [{"committee_id": 1, "amt": 1},{"committee_id": 2, "amt": 14}]},
+        "Hillary": {"total": 10, "contributions":  [{"committee_id": 2, "amt": 1},{"committee_id": 3, "amt": 9}]},
+        "Bernie": {"total": 5, "contributions": [ {"committee_id": 5, "amt": 3},{"committee_id": 6, "amt": 2}]}
     }
+    return res
 
 def run():
     app = web.Application(
