@@ -16,6 +16,13 @@ def getResults():
     print len(lst)
     return lst
 
+def dummy():
+    res = {
+        "Trump" : {"total" : 15, "contributions:" [{"committee_id": 1, "amt": 1},{"committee_id": 2, "amt": 14}]},
+        "Hillary" : {"total" : 10, "contributions:"  [{"committee_id": 2, "amt": 1},{"committee_id": 3, "amt": 9}]},
+        "Bernie" : {"total" : 5, "contributions:" [ {"committee_id": 5, "amt": 3},{"committee_id": 6, "amt": 2}]},
+
+    }
 
 def run():
     app = web.Application(
