@@ -1,19 +1,19 @@
 from tornado import gen, ioloop, web
 import json
 
-class HotelSearchApiHandler(web.RequestHandler):
+class ReadDataAPI(web.RequestHandler):
     @gen.coroutine
     def get(self):
         self.write({"results" :getResults()})
 ROUTES = [
-    (r"/hotels/search", HotelSearchApiHandler)
+    (r"/read", ReadDataAPI)
 ]
 def getResults():
     lst = []
-    with open('../public/itpas2.txt') as f:
+    with open('public/itpas2.txt') as f:
         for line in f:
-            print line
             lst.append(line)
+    print len(lst)
     return lst
 
 
@@ -23,7 +23,7 @@ def run():
         debug=True,
     )
     app.listen(9000)
-    print "Server started. lisiening port 8000"
+    print "Server started. lisiening port 9000"
 
     ioloop.IOLoop.current().start()
 
