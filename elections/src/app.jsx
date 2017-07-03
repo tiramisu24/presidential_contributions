@@ -13,8 +13,8 @@ class App extends React.Component{
 
       // console.log("works");
       $.ajax({
-          type: "POST",
-          url: "~/readFiles.py",
+          type: "GET",
+          url: "http://localhost:9000/read",
           success: this.callbackFunc
       });
 
@@ -28,7 +28,8 @@ class App extends React.Component{
     // file.close();
 
   callbackFunc(response) {
-      console.log(typeof response);
+    
+      console.log( response);
       // do something with the response
       // console.log(response);
   }

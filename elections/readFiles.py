@@ -5,9 +5,18 @@ class ReadDataAPI(web.RequestHandler):
     @gen.coroutine
     def get(self):
         self.write(dummy())
+
+    def set_default_headers(self):
+        print "setting headers!!!"
+        self.set_header("Access-Control-Allow-Origin", "*")
+        self.set_header("Access-Control-Allow-Headers", "x-requested-with")
+        self.set_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+
 ROUTES = [
     (r"/read", ReadDataAPI)
 ]
+
+
 def getResults():
     lst = []
     with open('public/itpas2.txt') as f:
@@ -15,6 +24,7 @@ def getResults():
             lst.append(line)
     print len(lst)
     return lst
+
 
 def dummy():
     res = {
