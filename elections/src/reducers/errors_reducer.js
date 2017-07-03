@@ -1,4 +1,4 @@
-import {RECEIVE_ERRORS, CLEAR_ERRORS} from '../actions/candidates_action';
+import {RECEIVE_ERRORS, CLEAR_ERRORS} from '../actions/candidates_actions';
 import merge from 'lodash/merge';
 
 

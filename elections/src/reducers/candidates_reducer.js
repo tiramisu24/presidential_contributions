@@ -1,4 +1,4 @@
-import {GET_ALL} from '../actions/candidates_action';
+import {GET_ALL} from '../actions/candidates_actions';
 import merge from 'lodash/merge';
 
 const Candidates = (state={},action) => {
