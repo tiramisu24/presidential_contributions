@@ -8,7 +8,7 @@ const Candidates = (state={},action) => {
       newCandidates = merge({}, action.candidates);
       return newCandidates;
     case ADD_CANDIDATE:
-      newCandidates = merge({}, action.candidate);
+      newCandidates = merge(newCandidates, action.candidate);
       return newCandidates;
     case REMOVE_CANDIDATE:
       delete newCandidates[action.candidateName];

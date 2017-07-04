@@ -3,6 +3,7 @@ import React from 'react';
 // import {BarChart} from 'react-d3-basic';
 import {PieChart, Pie,BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 import merge from 'lodash/merge';
+import "../style/charts.css";
 
 
 class Histogram extends React.Component{

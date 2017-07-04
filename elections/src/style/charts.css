@@ -1,0 +1,9 @@
+.recharts-text tspan{
+  color: pink;
+  font-size: 12px;
+}
+.recharts-text{
+  width:10px;
+  padding:0px;
+  word-wrap: normal;
+}

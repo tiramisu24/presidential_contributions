@@ -1,6 +1,6 @@
 import React from 'react';
 import Histogram from './histogram';
-import '../index.css';
+import '../style/index.css';
 import Select from './select';
 
 class App extends React.Component{
