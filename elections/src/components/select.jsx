@@ -17,15 +17,12 @@ class Select extends React.Component{
   componentWillReceiveProps(nextProps){
     this.setState({candidates:nextProps.candidates});
   }
-  showName(e){
-    e.preventDefault;
-    console.log("click button", e.target.textContent);
-  }
+
   showCandidates(isShown){
     let candidates = (isShown) ? this.state.candidates : this.state.unselected
     let list = Object.keys(candidates).map(name =>{
       return <div key={name} draggable={true} >
-        <Button onClick={this.showName}>{name}</Button>
+        <Button >{name}</Button>
       </div>
     })
     return list;
@@ -36,12 +33,17 @@ class Select extends React.Component{
     let candidates = this.state.candidates;
     let unselected = this.state.unselected;
     let candidateName = e.target.textContent;
+    console.log("onDragEnd",this.props);
     if(candidates.hasOwnProperty(candidateName)){
       unselected[candidateName] = candidates[candidateName];
       delete candidates[candidateName];
+      this.props.removeCandidate(candidateName);
     }else{
       candidates[candidateName] = unselected[candidateName];
       delete unselected[candidateName];
+      let temp = {}
+      temp[candidateName] = candidates[candidateName];
+      this.props.addCandidate(temp);
     }
 
     this.setState({candidates, unselected});

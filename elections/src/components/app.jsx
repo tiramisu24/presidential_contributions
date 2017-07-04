@@ -18,7 +18,9 @@ class App extends React.Component{
     return <div className="app">
 
       <Histogram candidates={this.props.candidates}/>
-      <Select candidates ={this.props.candidates}/>
+      <Select addCandidate = {this.props.addCandidate}
+              removeCandidate= {this.props.removeCandidate}
+              candidates ={this.props.candidates}/>
     </div>
     }
 }
