@@ -23,9 +23,9 @@ const addCandidate = (candidate) => ({
   type: ADD_CANDIDATE,
   candidate
 })
-const removeCandidate = (candidate) => ({
+const removeCandidate = (candidateName) => ({
   type: REMOVE_CANDIDATE,
-  candidate
+  candidateName
 })
 
 
