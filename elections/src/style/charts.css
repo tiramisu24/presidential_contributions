@@ -1,9 +1,10 @@
-.recharts-text tspan{
-  color: pink;
+
+.recharts-text > tspan{
   font-size: 12px;
+
 }
-.recharts-text{
-  width:10px;
-  padding:0px;
-  word-wrap: normal;
+.recharts-cartesian-axis-tick{
+  background-color: pink;
+  width: 1px !important;
+  word-wrap: break-word !important;
 }

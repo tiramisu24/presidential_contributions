@@ -1,6 +1,7 @@
 import React from 'react';
 import merge from 'lodash/merge';
 import {Button} from 'react-bootstrap';
+import "../style/select.css"
 
 
 class Select extends React.Component{
@@ -57,21 +58,20 @@ class Select extends React.Component{
 
   render(){
     return <div className="select">
-        <div>Candidates
+        <div className="select-title"><div>Candidates</div> </div>
         <div className="columns">
-          <div>
-            <div>Selected Candidates</div>
-            <div onDragEnd={this.onDragEnd}>
+          <div className="col">
+            <div className="title">Selected Candidates</div>
+            <div className="candidate-list" onDragEnd={this.onDragEnd}>
               {this.showCandidates(true)}
             </div>
           </div>
-          <div className="right-col">
-            <div>Not Shown</div>
-            <div onDragEnd={this.onDragEnd} >
+          <div className="col right-col">
+            <div className="title">Not Shown</div>
+            <div className="candidate-list" onDragEnd={this.onDragEnd} >
               {this.showCandidates(false)}
             </div>
           </div>
-        </div>
         </div>
       </div>
 

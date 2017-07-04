@@ -16,11 +16,13 @@ class App extends React.Component{
 
   render(){
     return <div className="app">
-
-      <Histogram candidates={this.props.candidates}/>
-      <Select addCandidate = {this.props.addCandidate}
-              removeCandidate= {this.props.removeCandidate}
-              candidates ={this.props.candidates}/>
+      <div className="header">Contributions from Committees</div>
+      <div className="content">        
+        <Histogram candidates={this.props.candidates}/>
+        <Select addCandidate = {this.props.addCandidate}
+          removeCandidate= {this.props.removeCandidate}
+          candidates ={this.props.candidates}/>
+      </div>
     </div>
     }
 }
