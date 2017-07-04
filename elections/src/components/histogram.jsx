@@ -11,7 +11,6 @@ class Histogram extends React.Component{
     this.getData = this.getData.bind(this);
   }
   getData(){
-    console.log("getData", this.props.candidates);
     let candidates = this.props.candidates;
     let names = Object.keys(candidates);
     let res = [];
