@@ -1,7 +1,7 @@
 import React from 'react';
 // import {Chart} from 'react-d3-core';
 // import {BarChart} from 'react-d3-basic';
-import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
+import {PieChart, Pie,BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 import merge from 'lodash/merge';
 
 
@@ -11,6 +11,7 @@ class Histogram extends React.Component{
     this.getData = this.getData.bind(this);
   }
   getData(){
+    console.log("getData", this.props.candidates);
     let candidates = this.props.candidates;
     let names = Object.keys(candidates);
     let res = [];
@@ -27,7 +28,7 @@ class Histogram extends React.Component{
   render(){
     let data = this.getData();
     return   <div>
-      <BarChart width={600} height={300} data={data}
+      <BarChart width={1000} height={600} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
        <XAxis dataKey="name"/>
        <YAxis />
@@ -36,6 +37,12 @@ class Histogram extends React.Component{
        <Legend />
        <Bar dataKey="total" fill="#8884d8" />
       </BarChart>
+
+      <PieChart width={1000} height={500}>
+      <Pie isAnimationActive={false} valueKey="total" nameKey="name" dataKey="total" data={data}  outerRadius={200} fill="#8884d8" label/>
+      <Tooltip/>
+     </PieChart>
+
     </div>
 
   }

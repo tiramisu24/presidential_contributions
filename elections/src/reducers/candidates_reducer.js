@@ -5,7 +5,8 @@ const Candidates = (state={},action) => {
   let newCandidates = merge({}, state);
   switch(action.type){
     case GET_ALL:
-      newCandidates = merge(newCandidates, action.candidates);
+      console.log("actions", action.candidates);
+      newCandidates = merge({}, action.candidates);
       return newCandidates;
     default:
       return newCandidates;
