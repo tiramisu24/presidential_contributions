@@ -19,11 +19,11 @@ const getAllCandidateInfo = (candidates) => ({
   type: GET_ALL,
   candidates
 })
-const addCandidate = (candidate) => ({
+export const addCandidate = (candidate) => ({
   type: ADD_CANDIDATE,
   candidate
 })
-const removeCandidate = (candidateName) => ({
+export const removeCandidate = (candidateName) => ({
   type: REMOVE_CANDIDATE,
   candidateName
 })
