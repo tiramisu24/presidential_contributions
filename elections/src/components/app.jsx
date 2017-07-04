@@ -13,7 +13,6 @@ class App extends React.Component{
 
 
   render(){
-    console.log("app",this.props);
     return <Histogram candidates={this.props.candidates}/>
     }
 }
