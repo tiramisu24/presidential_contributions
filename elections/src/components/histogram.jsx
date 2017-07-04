@@ -1,28 +1,13 @@
 import React from 'react';
-import {Chart} from 'react-d3-core';
-import {BarChart} from 'react-d3-basic';
+// import {Chart} from 'react-d3-core';
+// import {BarChart} from 'react-d3-basic';
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 import merge from 'lodash/merge';
 
 
 class Histogram extends React.Component{
   constructor(props){
     super(props);
-    this.state ={
-      title : "Total contributions",
-      width : 700,
-      height : 400,
-      chartSeries : [
-        {
-          field: "total",
-          name: "Donations"
-        }
-      ],
-      xLabel : "Candidate",
-      xScale : "linear",
-      yTicks : [5, "dollars"],
-      yLabel : "Donation Total"
-
-    };
     this.getData = this.getData.bind(this);
   }
   getData(){
@@ -39,29 +24,23 @@ class Histogram extends React.Component{
   }
 
 
-
-
   render(){
     let data = this.getData();
-    if(data.length === 0) return <div>Histogram</div>;
-      console.log("data", data);
-    let x = function(d){
-      return d.name;
-    };
-    return   <BarChart
-        title= {this.state.title}
-        data= {data}
-        width= {this.state.width}
-        height= {this.state.height}
-        chartSeries = {this.state.chartSeries}
-        x= {x}
-        xLabel= {this.state.xLabel}
-        xScale= {this.state.xScale}
-        yTicks= {this.state.yTicks}
-        yLabel = {this.state.yLabel}
-      />
+    return   <div>
+      <BarChart width={600} height={300} data={data}
+            margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+       <XAxis dataKey="name"/>
+       <YAxis />
+       <CartesianGrid strokeDasharray="3 3"/>
+       <Tooltip/>
+       <Legend />
+       <Bar dataKey="total" fill="#8884d8" />
+      </BarChart>
+    </div>
 
   }
 }
+
+
 
 export default Histogram;
