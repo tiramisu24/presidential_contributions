@@ -58,7 +58,7 @@ class Select extends React.Component{
 
   render(){
     return <div className="select">
-        <div className="select-title"><div>Candidates</div> </div>
+        <div className="header select-title"><div>Candidates</div> </div>
         <div className="columns">
           <div className="col">
             <div className="title">Selected Candidates</div>

@@ -1,4 +1,7 @@
 
+.graphs{
+  margin-top:25px;
+}
 .recharts-text > tspan{
   font-size: 12px;
 
@@ -7,4 +10,9 @@
   background-color: pink;
   width: 1px !important;
   word-wrap: break-word !important;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
