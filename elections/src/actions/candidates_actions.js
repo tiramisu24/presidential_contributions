@@ -21,5 +21,4 @@ const getAllCandidateInfo = (candidates) => ({
 export const getAll = () => dispatch => {
   return Util.getAllCandidateInfo()
              .then(candidates => dispatch(getAllCandidateInfo(candidates)))
-             .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }
