@@ -34,7 +34,6 @@ class Select extends React.Component{
     let candidates = this.state.candidates;
     let unselected = this.state.unselected;
     let candidateName = e.target.textContent;
-    console.log("onDragEnd",this.props);
     if(candidates.hasOwnProperty(candidateName)){
       unselected[candidateName] = candidates[candidateName];
       delete candidates[candidateName];
@@ -49,10 +48,6 @@ class Select extends React.Component{
 
     this.setState({candidates, unselected});
 
-  }
-  onDragStart(e){
-    e.preventDefault();
-    console.log("on drag start event", e);
   }
 
 
