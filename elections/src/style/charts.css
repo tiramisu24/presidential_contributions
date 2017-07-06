@@ -6,6 +6,39 @@
   font-size: 12px;
 
 }
+.add-space{
+  height:30px;
+}
+.recharts-wrapper{
+  overflow: visible;
+  margin: 20px;
+}
+
+.recharts-surface{
+    padding-bottom: 50px;
+}
+.pie-chart > .recharts-surface{
+    padding-top: 30px;
+    /*background-color: pink;*/
+}
+
+
+.recharts-legend-wrapper{
+  height: auto !important;
+  width: auto !important;
+}
+
+.recharts-legend-item > .recharts-surface{
+  height:auto !important;
+  width: auto !important;
+  padding: 10px !important;
+}
+.recharts-default-legend{
+  margin-top: 20px !important;
+  /*background-color: blue;*/
+
+
+}
 .recharts-cartesian-axis-tick{
   background-color: pink;
   width: 1px !important;

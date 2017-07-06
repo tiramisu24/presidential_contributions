@@ -52,7 +52,7 @@ class Select extends React.Component{
 
 
   render(){
-    return <div className="select">
+    return <div className="select-wrapper"><div className="select">
         <div className="header select-title"><div>Candidates</div> </div>
         <div className="columns">
           <div className="col">
@@ -68,6 +68,7 @@ class Select extends React.Component{
             </div>
           </div>
         </div>
+      </div>
       </div>
 
   }
